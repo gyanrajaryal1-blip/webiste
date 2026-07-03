@@ -2,8 +2,7 @@ const problemForm = document.querySelector("#problemForm");
 const problemList = document.querySelector("#problemList");
 const formStatus = document.querySelector("#formStatus");
 const refreshProblems = document.querySelector("#refreshProblems");
-const canUseApi = window.location.protocol === "file:"
-    || window.location.hostname === "localhost"
+const canUseApi = window.location.hostname === "localhost"
     || window.location.hostname === "127.0.0.1";
 const apiBase = window.location.protocol === "file:" ? "http://127.0.0.1:8000" : "";
 const storageKey = "drGyanPatientProblems";
