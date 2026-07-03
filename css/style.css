@@ -144,7 +144,7 @@ img {
 .hero__inner {
     min-height: 690px;
     display: grid;
-    grid-template-columns: minmax(0, 0.9fr) minmax(420px, 560px);
+    grid-template-columns: minmax(0, 0.85fr) minmax(460px, 620px);
     align-items: center;
     gap: 34px 54px;
 }
@@ -247,8 +247,8 @@ img {
     align-self: start;
     justify-self: end;
     width: fit-content;
-    max-width: min(100%, 560px);
-    margin-top: 18px;
+    max-width: min(100%, 620px);
+    margin-top: 54px;
     padding: 16px;
     border: 1px solid rgba(216, 160, 40, 0.36);
     background:
@@ -263,7 +263,7 @@ img {
     z-index: 1;
     width: auto;
     max-width: 100%;
-    height: min(680px, calc(100vh - 110px));
+    height: min(690px, calc(100vh - 90px));
     object-fit: contain;
     object-position: center center;
     border: 1px solid rgba(255, 255, 255, 0.18);
