@@ -656,16 +656,16 @@ img {
 
 .patient-layout {
     display: grid;
-    grid-template-columns: minmax(300px, 420px) minmax(0, 1fr);
-    gap: 32px;
+    grid-template-columns: minmax(300px, 390px) minmax(0, 1fr);
+    gap: 38px;
     align-items: start;
+    perspective: 1200px;
 }
 
 .problem-form,
 .problem-card {
-    border: 1px solid var(--line);
+    border: 1px solid rgba(216, 160, 40, 0.22);
     background: #fff;
-    box-shadow: 0 18px 38px rgba(31, 45, 51, 0.08);
 }
 
 .problem-form {
@@ -674,6 +674,10 @@ img {
     padding: 30px;
     position: sticky;
     top: 96px;
+    box-shadow:
+        0 22px 44px rgba(31, 45, 51, 0.1),
+        8px 8px 0 rgba(216, 160, 40, 0.1);
+    transform: rotateY(2deg);
 }
 
 .problem-form h2,
@@ -715,11 +719,44 @@ img {
 }
 
 .problem-board {
+    position: relative;
+    isolation: isolate;
     display: grid;
     gap: 18px;
+    min-height: 430px;
+    padding: 28px;
+    border: 1px solid rgba(216, 160, 40, 0.34);
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(244, 247, 246, 0.92)),
+        #fff;
+    box-shadow:
+        0 30px 70px rgba(31, 45, 51, 0.14),
+        14px 14px 0 rgba(216, 160, 40, 0.1),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.78);
+    transform: rotateY(-2deg) rotateX(1deg);
+}
+
+.problem-board::before,
+.problem-board::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+}
+
+.problem-board::before {
+    inset: 10px;
+    border: 1px solid rgba(21, 59, 54, 0.1);
+}
+
+.problem-board::after {
+    inset: 22px -14px -14px 22px;
+    border: 1px solid rgba(216, 160, 40, 0.22);
+    z-index: -1;
 }
 
 .problem-board__top {
+    position: relative;
+    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -737,22 +774,43 @@ img {
 }
 
 .problem-list {
+    position: relative;
+    z-index: 1;
     display: grid;
     gap: 18px;
-    max-height: 620px;
+    max-height: 600px;
     overflow-y: auto;
-    padding-right: 6px;
+    padding: 4px 10px 4px 4px;
+    scrollbar-color: var(--accent) rgba(21, 59, 54, 0.08);
 }
 
 .problem-card {
-    padding: 24px;
+    position: relative;
+    display: grid;
+    gap: 14px;
+    padding: 22px;
+    background:
+        linear-gradient(145deg, #fff, #f7faf9);
+    box-shadow:
+        0 18px 34px rgba(31, 45, 51, 0.1),
+        7px 7px 0 rgba(21, 59, 54, 0.06);
+    transform: translateZ(0);
+}
+
+.problem-card::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border: 1px solid rgba(216, 160, 40, 0.12);
+    pointer-events: none;
 }
 
 .problem-card__meta {
     display: flex;
     justify-content: space-between;
     gap: 14px;
-    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
 }
 
 .problem-card__meta strong {
@@ -765,7 +823,49 @@ img {
     color: var(--muted);
 }
 
+.problem-contact {
+    position: relative;
+    z-index: 1;
+    margin: -6px 0 0;
+    font-weight: 700;
+}
+
+.chat-bubble {
+    position: relative;
+    z-index: 1;
+    padding: 16px 18px;
+    border: 1px solid rgba(21, 59, 54, 0.08);
+    box-shadow: 0 12px 24px rgba(31, 45, 51, 0.08);
+}
+
+.chat-bubble span {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--accent-dark);
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.chat-bubble p {
+    margin: 0;
+}
+
+.chat-bubble--patient {
+    margin-right: 34px;
+    background: #f6fbfa;
+    border-left: 4px solid var(--forest);
+}
+
+.chat-bubble--doctor {
+    margin-left: 34px;
+    background: #fff9ec;
+    border-left: 4px solid var(--accent);
+}
+
 .reply-box {
+    position: relative;
+    z-index: 1;
     margin-top: 18px;
     padding-top: 18px;
     border-top: 1px solid var(--line);
@@ -879,6 +979,11 @@ img {
 
     .problem-form {
         position: static;
+        transform: none;
+    }
+
+    .problem-board {
+        transform: none;
     }
 
     .expertise-grid,

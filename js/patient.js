@@ -37,10 +37,16 @@ async function loadProblems() {
                     <span>${escapeHtml(item.created_at)}</span>
                 </div>
                 <p class="problem-contact">${escapeHtml(item.contact)}</p>
-                <p>${escapeHtml(item.problem)}</p>
+                <div class="chat-bubble chat-bubble--patient">
+                    <span>Patient problem</span>
+                    <p>${escapeHtml(item.problem)}</p>
+                </div>
                 <div class="reply-box">
-                    <h3>Reply</h3>
-                    <p>${item.reply ? escapeHtml(item.reply) : "No reply yet."}</p>
+                    <h3>Doctor Reply</h3>
+                    <div class="chat-bubble chat-bubble--doctor">
+                        <span>Saved reply</span>
+                        <p>${item.reply ? escapeHtml(item.reply) : "No reply yet."}</p>
+                    </div>
                     <form class="reply-form">
                         <input type="password" name="pin" inputmode="numeric" placeholder="Enter reply PIN" required>
                         <textarea name="reply" placeholder="Write or update reply" required>${escapeHtml(item.reply)}</textarea>
