@@ -1041,31 +1041,35 @@ img {
     }
 
     .hero {
-        min-height: 540px;
+        min-height: auto;
+        overflow: visible;
     }
 
     .hero__inner {
-        grid-template-columns: minmax(0, 1fr) minmax(170px, 0.62fr);
-        min-height: 510px;
-        gap: 16px;
+        grid-template-columns: 1fr;
+        min-height: auto;
+        gap: 20px;
     }
 
     .hero__content {
-        padding: 28px 0 44px;
+        display: contents;
     }
 
     .hero h1 {
+        order: 1;
         font-size: clamp(34px, 7.2vw, 46px);
     }
 
     .hero__text {
+        order: 2;
         margin-top: 18px;
         font-size: 15px;
     }
 
     .hero__actions {
+        order: 4;
         gap: 10px;
-        margin-top: 20px;
+        margin: 0 0 42px;
     }
 
     .primary-btn,
@@ -1076,10 +1080,16 @@ img {
     }
 
     .hero__photo {
-        width: min(100%, 270px);
-        margin-top: 34px;
+        order: 3;
+        justify-self: center;
+        width: min(86vw, 360px);
+        margin-top: 6px;
         padding: 14px;
-        transform: perspective(900px) rotateY(-3deg) rotateX(1deg);
+        transform: none;
+    }
+
+    .hero__photo::after {
+        inset: 18px 0 -10px 18px;
     }
 
     .hero__photo-name {
@@ -1151,13 +1161,13 @@ img {
     }
 
     .hero {
-        min-height: 505px;
+        min-height: auto;
     }
 
     .hero__inner {
-        grid-template-columns: minmax(0, 1fr) minmax(138px, 0.58fr);
-        min-height: 480px;
-        gap: 10px;
+        grid-template-columns: 1fr;
+        min-height: auto;
+        gap: 16px;
     }
 
     .hero h1 {
@@ -1170,11 +1180,13 @@ img {
 
     .hero__actions {
         flex-direction: row;
+        justify-content: center;
+        margin-bottom: 34px;
     }
 
     .hero__photo {
-        width: min(100%, 190px);
-        padding: 10px;
+        width: min(86vw, 330px);
+        padding: 12px;
     }
 
     .hero__photo img {
