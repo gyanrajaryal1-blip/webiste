@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Patient problem submission page for Dr. Gyan Raj Aryal.">
+    <title>Patient Problems | Dr. Gyan Raj Aryal</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header__inner">
+            <a class="brand" href="index.html">Dr. Gyan Raj Aryal</a>
+            <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="site-nav" aria-label="Primary navigation">
+                <a href="index.html#about">About</a>
+                <a href="index.html#expertise">Expertise</a>
+                <a href="index.html#experience">Experience</a>
+                <a href="patient.html">Patient Problems</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="patient-hero">
+            <div class="container">
+                <p class="eyebrow">Patient Support</p>
+                <h1>Write your health concern and receive a saved reply.</h1>
+                <p>
+                    Patient submissions are stored in the local SQLite database for this website. Avoid sharing highly
+                    sensitive emergency details online; seek urgent care immediately for life-threatening symptoms.
+                </p>
+            </div>
+        </section>
+
+        <section class="section patient-section">
+            <div class="container patient-layout">
+                <form class="problem-form" id="problemForm">
+                    <h2>Submit a Problem</h2>
+                    <label>
+                        Patient Name
+                        <input type="text" name="patient_name" placeholder="Patient name" required>
+                    </label>
+                    <label>
+                        Contact
+                        <input type="text" name="contact" placeholder="Phone or email" required>
+                    </label>
+                    <label>
+                        Problem
+                        <textarea name="problem" placeholder="Describe the problem" required></textarea>
+                    </label>
+                    <button class="primary-btn" type="submit">Save Problem</button>
+                    <p class="form-status" id="formStatus" role="status"></p>
+                </form>
+
+                <div class="problem-board">
+                    <div class="problem-board__top">
+                        <h2>Saved Problems &amp; Replies</h2>
+                        <button class="secondary-dark-btn" id="refreshProblems" type="button">Refresh</button>
+                    </div>
+                    <div class="problem-list" id="problemList"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer__inner">
+            <p>&copy; 2026 Dr. Gyan Raj Aryal. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/patient.js"></script>
+</body>
+
+</html>
