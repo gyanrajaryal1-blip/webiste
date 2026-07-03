@@ -246,22 +246,23 @@ img {
     position: relative;
     align-self: start;
     justify-self: end;
-    width: min(100%, 470px);
+    isolation: isolate;
+    width: min(100%, 455px);
     margin-top: 54px;
-    padding: 18px;
-    border: 1px solid rgba(216, 160, 40, 0.56);
+    padding: 22px 22px 24px;
+    border: 1px solid rgba(216, 160, 40, 0.72);
     background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.04)),
-        linear-gradient(135deg, rgba(216, 160, 40, 0.16), rgba(13, 33, 38, 0.42));
+        linear-gradient(145deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.035)),
+        linear-gradient(135deg, rgba(216, 160, 40, 0.18), rgba(8, 24, 28, 0.68));
     box-shadow:
-        0 34px 70px rgba(0, 0, 0, 0.34),
-        12px 12px 0 rgba(216, 160, 40, 0.12),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+        0 36px 74px rgba(0, 0, 0, 0.38),
+        11px 11px 0 rgba(216, 160, 40, 0.11),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.13),
+        inset 0 0 0 8px rgba(255, 255, 255, 0.035);
     backdrop-filter: blur(10px);
     transform: perspective(1000px) rotateY(-3deg) rotateX(1.5deg);
 }
 
-.hero__photo::before,
 .hero__photo::after {
     content: "";
     position: absolute;
@@ -269,15 +270,20 @@ img {
 }
 
 .hero__photo::before {
-    inset: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    content: "";
+    position: absolute;
+    inset: 8px;
     z-index: 0;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.025);
+    pointer-events: none;
 }
 
 .hero__photo::after {
-    inset: 28px -14px -14px 28px;
-    border: 1px solid rgba(216, 160, 40, 0.3);
-    z-index: -1;
+    inset: 20px -14px -14px 20px;
+    border: 1px solid rgba(216, 160, 40, 0.34);
+    box-shadow: 8px 8px 0 rgba(216, 160, 40, 0.06);
+    z-index: 0;
 }
 
 .hero__photo img {
@@ -286,19 +292,22 @@ img {
     width: 100%;
     height: auto;
     max-height: min(690px, calc(100vh - 90px));
+    padding: 10px;
     object-fit: contain;
     object-position: center center;
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(216, 160, 40, 0.28);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.06));
     box-shadow:
-        0 20px 42px rgba(0, 0, 0, 0.24),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+        0 20px 42px rgba(0, 0, 0, 0.28),
+        5px 5px 0 rgba(216, 160, 40, 0.12),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.12);
     filter: saturate(0.97) contrast(1.03);
 }
 
 .hero__photo-name {
     position: relative;
     z-index: 1;
-    margin: 18px 0 2px;
+    margin: 18px 0 0;
     color: #fff;
     font-size: 26px;
     line-height: 1.2;
@@ -310,15 +319,17 @@ img {
 .hero__quote {
     position: relative;
     z-index: 1;
-    max-width: 430px;
-    margin: 16px auto 0;
-    padding: 18px 20px;
+    max-width: 100%;
+    margin: 14px auto 0;
+    padding: 16px 18px;
     border-left: 4px solid var(--accent);
     color: #edf4f3;
-    background: rgba(8, 24, 28, 0.42);
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(8, 24, 28, 0.38)),
+        rgba(8, 24, 28, 0.5);
     box-shadow:
-        0 18px 36px rgba(0, 0, 0, 0.2),
-        7px 7px 0 rgba(216, 160, 40, 0.12);
+        0 18px 34px rgba(0, 0, 0, 0.22),
+        5px 5px 0 rgba(216, 160, 40, 0.11);
     font-family: Georgia, "Times New Roman", serif;
     font-size: 21px;
     line-height: 1.35;
