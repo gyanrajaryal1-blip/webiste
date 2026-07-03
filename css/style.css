@@ -1260,9 +1260,16 @@ img {
         overflow-wrap: anywhere;
     }
 
-    .about .section-heading h2,
-    .timeline .section-heading h2 {
+    .about .section-heading h2 {
         font-size: clamp(30px, 10vw, 42px);
+    }
+
+    .timeline .section-heading h2 {
+        max-width: 100%;
+        font-size: clamp(28px, 8.5vw, 38px);
+        line-height: 1.12;
+        overflow-wrap: normal;
+        word-break: normal;
     }
 
     .about__copy {
@@ -1299,8 +1306,8 @@ img {
     }
 
     .timeline .split {
-        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-        gap: 14px;
+        grid-template-columns: 1fr;
+        gap: 26px;
     }
 
     .timeline-item {
