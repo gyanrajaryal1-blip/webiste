@@ -185,7 +185,7 @@ img {
     display: flex;
     flex-wrap: wrap;
     gap: 14px;
-    margin-top: 34px;
+    margin-top: 28px;
 }
 
 .primary-btn,
@@ -208,6 +208,38 @@ img {
 .secondary-btn {
     color: #fff;
     background: transparent;
+}
+
+.hero__journey-card {
+    position: relative;
+    width: min(330px, 100%);
+    margin-top: 34px;
+    padding: 10px;
+    border: 1px solid rgba(216, 160, 40, 0.42);
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.04)),
+        rgba(13, 33, 38, 0.48);
+    box-shadow:
+        0 26px 48px rgba(0, 0, 0, 0.28),
+        10px 10px 0 rgba(216, 160, 40, 0.12);
+    transform: perspective(900px) rotateY(5deg) rotateX(2deg);
+}
+
+.hero__journey-card::before {
+    content: "";
+    position: absolute;
+    inset: 20px -12px -12px 20px;
+    border: 1px solid rgba(216, 160, 40, 0.18);
+    z-index: 0;
+}
+
+.hero__journey-card img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .hero__photo {
