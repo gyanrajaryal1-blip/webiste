@@ -7,11 +7,23 @@ const contactEmail = document.querySelector("#contactEmail");
 const contactFromName = document.querySelector("#contactFromName");
 const contactFromEmail = document.querySelector("#contactFromEmail");
 const contactReplyTo = document.querySelector("#contactReplyTo");
+const siteLoader = document.querySelector("#siteLoader");
 const emailConfig = {
     publicKey: "4ns-qlYYXIv11gS4x",
     serviceId: "service_kh2ctto",
     templateId: "template_6m1kwvj"
 };
+
+document.body.classList.add("is-loading");
+
+window.addEventListener("load", () => {
+    window.setTimeout(() => {
+        if (siteLoader) {
+            siteLoader.classList.add("is-hidden");
+        }
+        document.body.classList.remove("is-loading");
+    }, 900);
+});
 
 if (navToggle && siteNav) {
     navToggle.addEventListener("click", () => {
