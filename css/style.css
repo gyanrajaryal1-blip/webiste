@@ -212,7 +212,7 @@ img {
 
 .experience__journey-card {
     position: relative;
-    width: min(380px, 100%);
+    width: min(470px, 100%);
     margin-top: 34px;
     padding: 10px;
     border: 1px solid rgba(216, 160, 40, 0.42);
