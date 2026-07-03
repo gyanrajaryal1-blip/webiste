@@ -246,28 +246,53 @@ img {
     position: relative;
     align-self: start;
     justify-self: end;
-    width: fit-content;
-    max-width: min(100%, 620px);
+    width: min(100%, 470px);
     margin-top: 54px;
-    padding: 16px;
-    border: 1px solid rgba(216, 160, 40, 0.36);
+    padding: 18px;
+    border: 1px solid rgba(216, 160, 40, 0.56);
     background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.04)),
-        rgba(13, 33, 38, 0.36);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.32);
+        linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.04)),
+        linear-gradient(135deg, rgba(216, 160, 40, 0.16), rgba(13, 33, 38, 0.42));
+    box-shadow:
+        0 34px 70px rgba(0, 0, 0, 0.34),
+        12px 12px 0 rgba(216, 160, 40, 0.12),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(10px);
+    transform: perspective(1000px) rotateY(-3deg) rotateX(1.5deg);
+}
+
+.hero__photo::before,
+.hero__photo::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+}
+
+.hero__photo::before {
+    inset: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 0;
+}
+
+.hero__photo::after {
+    inset: 28px -14px -14px 28px;
+    border: 1px solid rgba(216, 160, 40, 0.3);
+    z-index: -1;
 }
 
 .hero__photo img {
     position: relative;
     z-index: 1;
-    width: auto;
-    max-width: 100%;
-    height: min(690px, calc(100vh - 90px));
+    width: 100%;
+    height: auto;
+    max-height: min(690px, calc(100vh - 90px));
     object-fit: contain;
     object-position: center center;
     border: 1px solid rgba(255, 255, 255, 0.18);
-    filter: saturate(0.96) contrast(1.02);
+    box-shadow:
+        0 20px 42px rgba(0, 0, 0, 0.24),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+    filter: saturate(0.97) contrast(1.03);
 }
 
 .hero__photo-name {
@@ -821,9 +846,9 @@ img {
 
     .hero__photo {
         justify-self: center;
-        width: fit-content;
-        max-width: min(88vw, 420px);
+        width: min(88vw, 430px);
         margin-top: 0;
+        transform: none;
     }
 
     .hero__photo img {
